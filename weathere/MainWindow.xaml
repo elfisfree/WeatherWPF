@@ -1,0 +1,36 @@
+﻿<Window x:Class="TemperatureApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TemperatureApp" Height="550" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="https://png.pngtree.com/thumb_back/fw800/background/20230527/pngtree-sun-with-a-smile-and-a-bird-on-sunny-day-clip-image_2673299.jpg" Opacity="0.5"/>
+        </Grid.Background>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Width="200" Margin="590,42,0,74">
+            <TextBox x:Name="TemperatureInput" Width="180" Margin="0,0,0,10" />
+            <Button Content="Добавить" Width="180" Click="AddTemperature_Click" FontFamily="Times New Roman" FontSize="14"/>
+            <Button Content="Показать статистику" Width="180" Click="ShowStatistics_Click" FontFamily="Times New Roman" FontSize="14"/>
+            <Button Content="Скрыть статистику" Width="180" Click="CloseStatistics_Click" FontFamily="Times New Roman" FontSize="14"/>
+            <Button Content="Сортировать по возрастанию" Width="180" Click="SortAscending_Click" FontFamily="Times New Roman"/>
+            <Button Content="Сортировать по убыванию" Width="180" Click="SortDescending_Click" FontFamily="Times New Roman"/>
+            <Button Content="Сортировать по дням" Width="180" Click="SortByDay_Click" FontFamily="Times New Roman"/>
+            <TextBlock x:Name="Statistics" Margin="0,10,0,0" FontFamily="Times New Roman" FontSize="12" Padding="5"/>
+            <TextBlock Height="19" Width="200" TextAlignment="Center" FontWeight="Bold" FontFamily="Times New Roman" FontSize="14" Margin="0,6,0,0" >
+                <Run Language="ru-ru" Text="Вывод от"/><Run Text=" x "/><Run Language="ru-ru" Text="до "/><Run Text="y"/>
+            </TextBlock>
+            <TextBox x:Name="FilterMinInput" Width="180" Margin="0,10,0,0" />
+            <TextBox x:Name="FilterMaxInput" Width="180" Margin="0,10,0,5" />
+            <Button Content="Фильтровать" Width="180" Click="FilterTemperature_Click" FontFamily="Times New Roman" Height="30" FontSize="14"/>
+            <Button Content="Очистить список" Width="180" Click="ClearList_Click" FontFamily="Times New Roman" Height="30" FontSize="14" Margin="0,10,0,0"/>
+            <Button Content="Экспорт в TXT" Width="180" Click="ExportToTxt_Click" FontFamily="Times New Roman" Height="28" Margin="0,10,0,0"/>
+        </StackPanel>
+        <ListBox x:Name="TemperatureList" FontFamily="Times New Roman" FontSize="16" HorizontalAlignment="Left" Width="550" Margin="10,10,0,10">
+            <ListBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.7"/>
+            </ListBox.Background>
+        </ListBox>
+        <TextBlock TextAlignment="Center" Margin="590,18,0,0" FontWeight="Bold" FontSize="14" FontFamily="Times New Roman" HorizontalAlignment="Left" Width="200" Height="19" VerticalAlignment="Top">
+            <Run Language="ru-ru" Text="Введите температуру:"/>
+        </TextBlock>
+    </Grid>
+</Window>
